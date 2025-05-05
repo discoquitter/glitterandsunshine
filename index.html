@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>111</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=IBM+Plex+Sans&family=Open+Sauce+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+    .first-page {
+      height: 100vh;
+      background-color: #f6f4ef; /* Sand */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #00333d; /* Deep Green */
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      padding: 20px;
+    }
+    .split-container {
+      display: flex;
+      height: 100vh;
+    }
+    .split-container .left {
+      background-color: #f6f4ef; /* Sand */
+      color: #00333d; /* Deep Green */
+      width: 50%;
+      padding: 60px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+.split-container .right {
+  background-color: #00333d; /* Deep Green */
+  color: #f6f4ef; /* Sand */
+  width: 50%;
+  padding: 60px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Add this to center horizontally too */
+  height: 90vh; /* Add this to make it tall */
+  border-top-left-radius: 300px;
+  border-bottom-left-radius: 300px;
+  margin-left: -100px;
+  overflow: hidden;
+}
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+    p {
+      margin-top: 20px;
+      line-height: 1.6;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- First Page -->
+<section class="first-page">
+  <h1 id="typed-text"></h1>
+</section>
+
+<script>
+  const text = "You fixed the prescription, now fix the process.";
+  const typedText = document.getElementById("typed-text");
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      typedText.innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 70);
+    }
+  }
+
+  window.onload = typeWriter;
+</script>
+
+
+  <!-- Second Page: Split View -->
+  <section class="split-container">
+    
+    <!-- About Me Section -->
+    <div class="left">
+      <h2>About Me</h2>
+      <p>My journey in healthcare started as the Head of Administration at Lilavati Hospital where we built some of Mumbai’s first patient service teams, (long before "patient experience" became a buzzword), I then went on to lead the hospital’s international expansion into Kenya.</p>
+      <p>Later, I scaled patient experience systems across multiple diagnostic centers at NM Medical, adapting to high-volume operations. Over the years, I’ve developed systems that serve everyone from families to high-profile patients like the Dalai Lama, Amitabh Bachchan, and Sachin Tendulkar.</p>
+    </div>
+
+    <!-- My Philosophy Section -->
+    <div class="right">
+      <h2>My Philosophy</h2>
+      <p>Hospitals grow when patients trust them enough to return, refer others, and recover faster.</p>
+      <p>In an industry defined by high stakes and noise, patient experience is one of the few true competitive advantages left. Not a checkbox, but a strategic asset that quietly compounds over time.</p>
+      <p>I build sustainable, high-impact, patient-centric care models that actually work.</p>
+      <p>I work with teams who understand:</p>
+      <p>You don't win healthcare by marketing but by earning trust, the kind that people would choose with their lives, not once, but twice.</p>
+    </div>
+
+  </section>
+
+</body>
+</html>
